@@ -2,8 +2,19 @@
 public class MainClass {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		int iterations = 3;
+		MyThread thread = new MyThread();
+		thread.start();
+		
+		try {
+			for (int i = 0; i < iterations; i++) {
+				System.out.println("From Main Process");
+				Thread.sleep(1000);
+			}
+		} catch (InterruptedException e) {
+			System.err.println(e);
+		}
+		 
 	}
 
 }
